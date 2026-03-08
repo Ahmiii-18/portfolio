@@ -662,4 +662,5 @@ with gr.Blocks(css=CSS, title="Ahmad Sheraz — Portfolio") as demo:
     gr.HTML(PAGE)
 
 if __name__ == "__main__":
+
     demo.launch()
