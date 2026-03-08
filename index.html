@@ -471,4 +471,18 @@ document.querySelectorAll('a,.card,.btn,.chip,.pill').forEach(el=>{
   draw();
 })();
 
-/* 4 — SCROLL REVEA
+/* 4 — SCROLL REVEAL */
+const revealElements=document.querySelectorAll('.reveal');
+function revealOnScroll(){
+  const viewportHeight=window.innerHeight;
+  revealElements.forEach(el=>{
+    const rect=el.getBoundingClientRect();
+    if(rect.top<viewportHeight-100)el.classList.add('visible');
+  });
+}
+window.addEventListener('scroll',revealOnScroll);
+revealOnScroll();
+</script>
+</body>
+</html>
+  
