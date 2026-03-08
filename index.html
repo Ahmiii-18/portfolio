@@ -1,141 +1,262 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ahmad Sheraz — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Outfit:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Outfit:wght@300;400;500;600;700&family=Fira+Code&display=swap');
 *{margin:0;padding:0;box-sizing:border-box;}
-body{background:#020409;color:#f0f4ff;font-family:'Outfit',sans-serif;}
-.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:60px 24px;background:radial-gradient(ellipse at center,#0d1a3a 0%,#020409 70%);}
-.badge{font-family:'Fira Code',monospace;font-size:12px;color:#00d4ff;border:1px solid rgba(0,212,255,0.3);background:rgba(0,212,255,0.05);padding:6px 18px;border-radius:20px;margin-bottom:32px;letter-spacing:.2em;text-transform:uppercase;}
-.name{font-family:'Orbitron',sans-serif;font-size:clamp(40px,8vw,80px);font-weight:900;line-height:1.1;margin-bottom:16px;}
-.name span{background:linear-gradient(90deg,#00d4ff,#bf87ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.role{font-size:18px;color:#4f8ef7;font-weight:600;margin-bottom:20px;}
-.bio{font-size:16px;color:#6b7799;line-height:1.8;max-width:580px;margin:0 auto 40px;}
-.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;}
-.chip{font-family:'Fira Code',monospace;font-size:12px;padding:6px 16px;border-radius:20px;}
-.chip1{color:#00d4ff;border:1px solid rgba(0,212,255,0.3);background:rgba(0,212,255,0.05);}
-.chip2{color:#bf87ff;border:1px solid rgba(191,135,255,0.3);background:rgba(191,135,255,0.05);}
-.chip3{color:#00ffb3;border:1px solid rgba(0,255,179,0.3);background:rgba(0,255,179,0.05);}
-.section{padding:80px 24px;max-width:1000px;margin:0 auto;}
-.sec-header{display:flex;align-items:center;gap:16px;margin-bottom:48px;}
-.sec-num{font-family:'Fira Code',monospace;font-size:12px;color:#00d4ff;opacity:.6;}
-.sec-title{font-family:'Orbitron',sans-serif;font-size:24px;font-weight:700;letter-spacing:.05em;}
-.sec-line{flex:1;height:1px;background:linear-gradient(90deg,rgba(0,212,255,.2),transparent);}
-.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;}
-.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:20px;}
-.card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:28px;transition:all .3s;}
-.card:hover{background:rgba(255,255,255,0.07);border-color:rgba(99,179,255,0.3);transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,212,255,.08);}
-.skill-label{font-family:'Fira Code',monospace;font-size:10px;color:#00d4ff;letter-spacing:.15em;text-transform:uppercase;margin-bottom:14px;opacity:.8;}
-.pills{display:flex;flex-wrap:wrap;gap:8px;}
-.pill{font-size:13px;font-weight:500;padding:5px 14px;border-radius:8px;border:1px solid rgba(79,142,247,.25);background:rgba(79,142,247,.08);color:#a8c4ff;transition:all .2s;cursor:default;}
-.pill:hover{background:rgba(79,142,247,.2);border-color:#4f8ef7;color:#fff;}
-.proj-num{font-family:'Fira Code',monospace;font-size:11px;color:#00d4ff;opacity:.5;margin-bottom:10px;}
-.proj-title{font-size:20px;font-weight:700;margin-bottom:12px;}
-.proj-desc{font-size:14px;color:#6b7799;line-height:1.75;margin-bottom:20px;}
-.proj-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;}
-.proj-tech{font-family:'Fira Code',monospace;font-size:11px;color:#bf87ff;background:rgba(191,135,255,.08);border:1px solid rgba(191,135,255,.2);padding:5px 12px;border-radius:6px;}
-.proj-link{font-size:13px;font-weight:600;color:#00d4ff;text-decoration:none;}
-.proj-link:hover{text-decoration:underline;}
-.edu-inner{display:flex;align-items:flex-start;gap:20px;flex-wrap:wrap;}
-.edu-icon{width:50px;height:50px;border-radius:12px;background:linear-gradient(135deg,rgba(0,212,255,.15),rgba(191,135,255,.15));border:1px solid rgba(0,212,255,.2);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
-.edu-degree{font-size:17px;font-weight:700;margin-bottom:6px;}
-.edu-school{font-size:14px;color:#4f8ef7;font-weight:500;margin-bottom:4px;}
-.edu-detail{font-size:13px;color:#6b7799;}
-.edu-year{margin-left:auto;font-family:'Fira Code',monospace;font-size:12px;color:#00ffb3;background:rgba(0,255,179,.06);border:1px solid rgba(0,255,179,.2);padding:6px 14px;border-radius:8px;white-space:nowrap;}
-.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;}
-.contact-icon{font-size:24px;margin-bottom:10px;}
-.contact-lbl{font-family:'Fira Code',monospace;font-size:10px;color:#00d4ff;letter-spacing:.15em;text-transform:uppercase;margin-bottom:6px;opacity:.7;}
-.contact-val{font-size:14px;color:#f0f4ff;word-break:break-all;}
-.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.06),transparent);max-width:1000px;margin:0 auto;}
-.footer{text-align:center;padding:40px 24px;border-top:1px solid rgba(255,255,255,.06);color:#6b7799;font-family:'Fira Code',monospace;font-size:12px;}
-.footer span{color:#00d4ff;}
+html{scroll-behavior:smooth;}
+body{background:#020409;color:#f0f4ff;font-family:'Outfit',sans-serif;overflow-x:hidden;}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  text-align:center;
+  padding:80px 20px 60px;
+  background:radial-gradient(ellipse at center,#0d1a3a 0%,#020409 70%);
+  position:relative;
+}
+.badge{
+  font-family:'Fira Code',monospace;
+  font-size:11px;color:#00d4ff;
+  border:1px solid rgba(0,212,255,0.3);
+  background:rgba(0,212,255,0.05);
+  padding:6px 16px;border-radius:20px;
+  margin-bottom:28px;
+  letter-spacing:.15em;text-transform:uppercase;
+  display:inline-block;
+}
+.name{
+  font-family:'Orbitron',sans-serif;
+  font-size:clamp(36px,10vw,88px);
+  font-weight:900;line-height:1.05;
+  margin-bottom:14px;
+}
+.grad{
+  background:linear-gradient(90deg,#00d4ff,#bf87ff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.role{font-size:clamp(15px,4vw,18px);color:#4f8ef7;font-weight:600;margin-bottom:18px;}
+.bio{
+  font-size:clamp(14px,3.5vw,16px);
+  color:#6b7799;line-height:1.8;
+  max-width:540px;margin:0 auto 36px;
+}
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;}
+.chip{
+  font-family:'Fira Code',monospace;
+  font-size:clamp(10px,2.5vw,12px);
+  padding:5px 14px;border-radius:20px;
+}
+.c1{color:#00d4ff;border:1px solid rgba(0,212,255,0.3);background:rgba(0,212,255,0.05);}
+.c2{color:#bf87ff;border:1px solid rgba(191,135,255,0.3);background:rgba(191,135,255,0.05);}
+.c3{color:#00ffb3;border:1px solid rgba(0,255,179,0.3);background:rgba(0,255,179,0.05);}
+
+/* SECTIONS */
+.sec{padding:70px 20px;max-width:960px;margin:0 auto;}
+.sh{display:flex;align-items:center;gap:14px;margin-bottom:40px;}
+.sn{font-family:'Fira Code',monospace;font-size:11px;color:#00d4ff;opacity:.6;white-space:nowrap;}
+.st{font-family:'Orbitron',sans-serif;font-size:clamp(18px,5vw,24px);font-weight:700;white-space:nowrap;}
+.sl{flex:1;height:1px;background:linear-gradient(90deg,rgba(0,212,255,.2),transparent);}
+
+/* CARDS */
+.card{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:14px;padding:22px;
+  transition:all .3s;
+}
+.card:hover{
+  background:rgba(255,255,255,0.07);
+  border-color:rgba(99,179,255,0.3);
+  transform:translateY(-3px);
+  box-shadow:0 16px 40px rgba(0,212,255,.07);
+}
+
+/* SKILLS */
+.g2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+.skill-lbl{
+  font-family:'Fira Code',monospace;font-size:10px;
+  color:#00d4ff;letter-spacing:.12em;
+  text-transform:uppercase;margin-bottom:12px;opacity:.8;
+}
+.pills{display:flex;flex-wrap:wrap;gap:7px;}
+.pill{
+  font-size:12px;padding:4px 12px;
+  border-radius:8px;
+  border:1px solid rgba(79,142,247,.25);
+  background:rgba(79,142,247,.08);
+  color:#a8c4ff;
+}
+
+/* PROJECTS */
+.g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;}
+.pn{font-family:'Fira Code',monospace;font-size:10px;color:#00d4ff;opacity:.5;margin-bottom:8px;}
+.pt{font-size:clamp(16px,4vw,19px);font-weight:700;margin-bottom:10px;}
+.pd{font-size:13px;color:#6b7799;line-height:1.7;margin-bottom:18px;}
+.pf{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.ptc{
+  font-family:'Fira Code',monospace;font-size:11px;
+  color:#bf87ff;background:rgba(191,135,255,.08);
+  border:1px solid rgba(191,135,255,.2);
+  padding:4px 10px;border-radius:6px;
+}
+.pl{font-size:13px;font-weight:600;color:#00d4ff;text-decoration:none;}
+.pl:hover{text-decoration:underline;}
+
+/* EDUCATION */
+.ei{display:flex;align-items:flex-start;gap:16px;}
+.eic{
+  width:46px;height:46px;flex-shrink:0;
+  border-radius:12px;font-size:20px;
+  background:linear-gradient(135deg,rgba(0,212,255,.15),rgba(191,135,255,.15));
+  border:1px solid rgba(0,212,255,.2);
+  display:flex;align-items:center;justify-content:center;
+}
+.edu-text{flex:1;}
+.ed{font-size:clamp(14px,4vw,17px);font-weight:700;margin-bottom:5px;}
+.es{font-size:13px;color:#4f8ef7;margin-bottom:4px;}
+.edt{font-size:12px;color:#6b7799;}
+.ey{
+  font-family:'Fira Code',monospace;font-size:11px;
+  color:#00ffb3;white-space:nowrap;
+  background:rgba(0,255,179,.06);
+  border:1px solid rgba(0,255,179,.2);
+  padding:5px 12px;border-radius:8px;
+  align-self:flex-start;
+}
+
+/* CONTACT */
+.cg{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+.ci{font-size:22px;margin-bottom:8px;}
+.cl{
+  font-family:'Fira Code',monospace;font-size:10px;
+  color:#00d4ff;letter-spacing:.12em;
+  text-transform:uppercase;margin-bottom:5px;opacity:.7;
+}
+.cv{font-size:13px;color:#f0f4ff;word-break:break-all;line-height:1.5;}
+
+/* DIVIDER */
+.div{height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.06),transparent);}
+
+/* FOOTER */
+.foot{
+  text-align:center;padding:36px 20px;
+  border-top:1px solid rgba(255,255,255,.06);
+  color:#6b7799;
+  font-family:'Fira Code',monospace;font-size:11px;
+  line-height:1.8;
+}
+.foot span{color:#00d4ff;}
+
+/* MOBILE */
+@media(max-width:500px){
+  .g2{grid-template-columns:1fr;}
+  .cg{grid-template-columns:1fr;}
+  .ei{flex-wrap:wrap;}
+  .ey{margin-top:10px;}
+  .pf{flex-direction:column;align-items:flex-start;}
+  .sec{padding:50px 16px;}
+  .card{padding:18px;}
+  .sh{gap:10px;}
+}
 </style>
 </head>
 <body>
 
+<!-- HERO -->
 <div class="hero">
   <div class="badge">BSRAi · University of Lahore · 2024</div>
-  <div class="name">Ahmad<br><span>Sheraz</span></div>
-  <div class="role">AI & Robotics Student</div>
-  <div class="bio">Interested in the virtual world of Robotics and Artificial Intelligence, with a focus on Machine Learning. Studying BSc in Robotics & AI at the University of Lahore, while actively building web apps and sharpening coding skills.</div>
+  <div class="name">Ahmad<br><span class="grad">Sheraz</span></div>
+  <div class="role">AI &amp; Robotics Student</div>
+  <div class="bio">Interested in the virtual world of Robotics and Artificial Intelligence, with a focus on Machine Learning. Studying at University of Lahore while building web apps and sharpening coding skills.</div>
   <div class="chips">
-    <span class="chip chip1">🤖 Robotics</span>
-    <span class="chip chip2">🧠 AI / ML</span>
-    <span class="chip chip3">💻 Web Dev</span>
+    <span class="chip c1">🤖 Robotics</span>
+    <span class="chip c2">🧠 AI / ML</span>
+    <span class="chip c3">💻 Web Dev</span>
   </div>
 </div>
 
-<div class="divider"></div>
+<div class="div"></div>
 
-<div class="section">
-  <div class="sec-header"><span class="sec-num">01</span><h2 class="sec-title">SKILLS</h2><div class="sec-line"></div></div>
-  <div class="grid2">
-    <div class="card"><div class="skill-label">Languages</div><div class="pills"><span class="pill">Python</span><span class="pill">C++</span><span class="pill">JavaScript</span></div></div>
-    <div class="card"><div class="skill-label">Web</div><div class="pills"><span class="pill">HTML</span><span class="pill">CSS</span></div></div>
-    <div class="card"><div class="skill-label">Interests</div><div class="pills"><span class="pill">Machine Learning</span><span class="pill">Robotics</span><span class="pill">AI</span></div></div>
-    <div class="card"><div class="skill-label">Tools</div><div class="pills"><span class="pill">Git</span><span class="pill">GitHub</span><span class="pill">VS Code</span><span class="pill">Gradio</span></div></div>
+<!-- SKILLS -->
+<div class="sec">
+  <div class="sh"><span class="sn">01</span><h2 class="st">SKILLS</h2><div class="sl"></div></div>
+  <div class="g2">
+    <div class="card"><div class="skill-lbl">Languages</div><div class="pills"><span class="pill">Python</span><span class="pill">C++</span><span class="pill">JavaScript</span></div></div>
+    <div class="card"><div class="skill-lbl">Web</div><div class="pills"><span class="pill">HTML</span><span class="pill">CSS</span></div></div>
+    <div class="card"><div class="skill-lbl">Interests</div><div class="pills"><span class="pill">Machine Learning</span><span class="pill">Robotics</span><span class="pill">AI</span></div></div>
+    <div class="card"><div class="skill-lbl">Tools</div><div class="pills"><span class="pill">Git</span><span class="pill">GitHub</span><span class="pill">VS Code</span><span class="pill">Gradio</span></div></div>
   </div>
 </div>
 
-<div class="divider"></div>
+<div class="div"></div>
 
-<div class="section">
-  <div class="sec-header"><span class="sec-num">02</span><h2 class="sec-title">PROJECTS</h2><div class="sec-line"></div></div>
-  <div class="grid3">
+<!-- PROJECTS -->
+<div class="sec">
+  <div class="sh"><span class="sn">02</span><h2 class="st">PROJECTS</h2><div class="sl"></div></div>
+  <div class="g3">
     <div class="card">
-      <div class="proj-num">PROJECT_01</div>
-      <div class="proj-title">🌙 Ramadan Countdown App</div>
-      <div class="proj-desc">A web-based Ramadan countdown application built and published via GitHub Pages. Displays a live countdown to Ramadan with a clean, interactive browser interface.</div>
-      <div class="proj-footer">
-        <span class="proj-tech">HTML · CSS · JavaScript · GitHub Pages</span>
-        <a class="proj-link" href="https://github.com/Ahmiii-18" target="_blank">View on GitHub →</a>
+      <div class="pn">PROJECT_01</div>
+      <div class="pt">🌙 Ramadan Countdown App</div>
+      <div class="pd">A web-based Ramadan countdown app published via GitHub Pages with live countdown and clean interactive interface.</div>
+      <div class="pf">
+        <span class="ptc">HTML · CSS · JS · GitHub Pages</span>
+        <a class="pl" href="https://github.com/Ahmiii-18" target="_blank">View on GitHub →</a>
       </div>
     </div>
     <div class="card">
-      <div class="proj-num">PROJECT_02</div>
-      <div class="proj-title">⚡ Speed Test App</div>
-      <div class="proj-desc">A browser-based internet speed testing application. Measures and displays real-time download and upload speeds directly in the web browser.</div>
-      <div class="proj-footer">
-        <span class="proj-tech">HTML · CSS · JavaScript · GitHub Pages</span>
-        <a class="proj-link" href="https://github.com/Ahmiii-18" target="_blank">View on GitHub →</a>
+      <div class="pn">PROJECT_02</div>
+      <div class="pt">⚡ Speed Test App</div>
+      <div class="pd">Browser-based internet speed testing app measuring real-time download and upload speeds in the browser.</div>
+      <div class="pf">
+        <span class="ptc">HTML · CSS · JS · GitHub Pages</span>
+        <a class="pl" href="https://github.com/Ahmiii-18" target="_blank">View on GitHub →</a>
       </div>
     </div>
   </div>
 </div>
 
-<div class="divider"></div>
+<div class="div"></div>
 
-<div class="section">
-  <div class="sec-header"><span class="sec-num">03</span><h2 class="sec-title">EDUCATION</h2><div class="sec-line"></div></div>
+<!-- EDUCATION -->
+<div class="sec">
+  <div class="sh"><span class="sn">03</span><h2 class="st">EDUCATION</h2><div class="sl"></div></div>
   <div class="card">
-    <div class="edu-inner">
-      <div class="edu-icon">🎓</div>
-      <div>
-        <div class="edu-degree">BSRAi — Robotics and Artificial Intelligence</div>
-        <div class="edu-school">University of Lahore (UOL)</div>
-        <div class="edu-detail">Studying AI, Robotics, and Machine Learning</div>
+    <div class="ei">
+      <div class="eic">🎓</div>
+      <div class="edu-text">
+        <div class="ed">BSRAi — Robotics and Artificial Intelligence</div>
+        <div class="es">University of Lahore (UOL)</div>
+        <div class="edt">Studying AI, Robotics, and Machine Learning</div>
       </div>
-      <div class="edu-year">2024 – 2028</div>
+      <div class="ey">2024–2028</div>
     </div>
   </div>
 </div>
 
-<div class="divider"></div>
+<div class="div"></div>
 
-<div class="section">
-  <div class="sec-header"><span class="sec-num">04</span><h2 class="sec-title">CONTACT</h2><div class="sec-line"></div></div>
-  <div class="contact-grid">
-    <div class="card"><div class="contact-icon">✉️</div><div class="contact-lbl">Email</div><div class="contact-val">ahmadshiraz912@icloud.com</div></div>
-    <div class="card"><div class="contact-icon">💼</div><div class="contact-lbl">LinkedIn</div><div class="contact-val">linkedin.com/in/ahmad-shiraz-8bb9a63a9</div></div>
-    <div class="card"><div class="contact-icon">🐙</div><div class="contact-lbl">GitHub</div><div class="contact-val">github.com/Ahmiii-18</div></div>
-    <div class="card"><div class="contact-icon">📍</div><div class="contact-lbl">Location</div><div class="contact-val">Lahore, Punjab, Pakistan</div></div>
+<!-- CONTACT -->
+<div class="sec">
+  <div class="sh"><span class="sn">04</span><h2 class="st">CONTACT</h2><div class="sl"></div></div>
+  <div class="cg">
+    <div class="card"><div class="ci">✉️</div><div class="cl">Email</div><div class="cv">ahmadshiraz912@icloud.com</div></div>
+    <div class="card"><div class="ci">💼</div><div class="cl">LinkedIn</div><div class="cv">linkedin.com/in/ahmad-shiraz-8bb9a63a9</div></div>
+    <div class="card"><div class="ci">🐙</div><div class="cl">GitHub</div><div class="cv">github.com/Ahmiii-18</div></div>
+    <div class="card"><div class="ci">📍</div><div class="cl">Location</div><div class="cv">Lahore, Punjab, Pakistan</div></div>
   </div>
 </div>
 
-<div class="footer">
-  <span>Ahmad Sheraz</span> · BSRAi · University of Lahore · Built with Python & Gradio
+<!-- FOOTER -->
+<div class="foot">
+  <span>Ahmad Sheraz</span> · BSRAi · University of Lahore<br>Built with Python &amp; Gradio
 </div>
 
 </body>
