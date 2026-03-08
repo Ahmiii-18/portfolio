@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ahmad Sheraz — Portfolio</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Outfit:wght@300;400;500;600;700&family=Fira+Code&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#020409;color:#f0f4ff;font-family:'Outfit',sans-serif;}
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:60px 24px;background:radial-gradient(ellipse at center,#0d1a3a 0%,#020409 70%);}
+.badge{font-family:'Fira Code',monospace;font-size:12px;color:#00d4ff;border:1px solid rgba(0,212,255,0.3);background:rgba(0,212,255,0.05);padding:6px 18px;border-radius:20px;margin-bottom:32px;letter-spacing:.2em;text-transform:uppercase;}
+.name{font-family:'Orbitron',sans-serif;font-size:clamp(40px,8vw,80px);font-weight:900;line-height:1.1;margin-bottom:16px;}
+.name span{background:linear-gradient(90deg,#00d4ff,#bf87ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.role{font-size:18px;color:#4f8ef7;font-weight:600;margin-bottom:20px;}
+.bio{font-size:16px;color:#6b7799;line-height:1.8;max-width:580px;margin:0 auto 40px;}
+.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;}
+.chip{font-family:'Fira Code',monospace;font-size:12px;padding:6px 16px;border-radius:20px;}
+.chip1{color:#00d4ff;border:1px solid rgba(0,212,255,0.3);background:rgba(0,212,255,0.05);}
+.chip2{color:#bf87ff;border:1px solid rgba(191,135,255,0.3);background:rgba(191,135,255,0.05);}
+.chip3{color:#00ffb3;border:1px solid rgba(0,255,179,0.3);background:rgba(0,255,179,0.05);}
+.section{padding:80px 24px;max-width:1000px;margin:0 auto;}
+.sec-header{display:flex;align-items:center;gap:16px;margin-bottom:48px;}
+.sec-num{font-family:'Fira Code',monospace;font-size:12px;color:#00d4ff;opacity:.6;}
+.sec-title{font-family:'Orbitron',sans-serif;font-size:24px;font-weight:700;letter-spacing:.05em;}
+.sec-line{flex:1;height:1px;background:linear-gradient(90deg,rgba(0,212,255,.2),transparent);}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:20px;}
+.card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:28px;transition:all .3s;}
+.card:hover{background:rgba(255,255,255,0.07);border-color:rgba(99,179,255,0.3);transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,212,255,.08);}
+.skill-label{font-family:'Fira Code',monospace;font-size:10px;color:#00d4ff;letter-spacing:.15em;text-transform:uppercase;margin-bottom:14px;opacity:.8;}
+.pills{display:flex;flex-wrap:wrap;gap:8px;}
+.pill{font-size:13px;font-weight:500;padding:5px 14px;border-radius:8px;border:1px solid rgba(79,142,247,.25);background:rgba(79,142,247,.08);color:#a8c4ff;transition:all .2s;cursor:default;}
+.pill:hover{background:rgba(79,142,247,.2);border-color:#4f8ef7;color:#fff;}
+.proj-num{font-family:'Fira Code',monospace;font-size:11px;color:#00d4ff;opacity:.5;margin-bottom:10px;}
+.proj-title{font-size:20px;font-weight:700;margin-bottom:12px;}
+.proj-desc{font-size:14px;color:#6b7799;line-height:1.75;margin-bottom:20px;}
+.proj-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+.proj-tech{font-family:'Fira Code',monospace;font-size:11px;color:#bf87ff;background:rgba(191,135,255,.08);border:1px solid rgba(191,135,255,.2);padding:5px 12px;border-radius:6px;}
+.proj-link{font-size:13px;font-weight:600;color:#00d4ff;text-decoration:none;}
+.proj-link:hover{text-decoration:underline;}
+.edu-inner{display:flex;align-items:flex-start;gap:20px;flex-wrap:wrap;}
+.edu-icon{width:50px;height:50px;border-radius:12px;background:linear-gradient(135deg,rgba(0,212,255,.15),rgba(191,135,255,.15));border:1px solid rgba(0,212,255,.2);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
+.edu-degree{font-size:17px;font-weight:700;margin-bottom:6px;}
+.edu-school{font-size:14px;color:#4f8ef7;font-weight:500;margin-bottom:4px;}
+.edu-detail{font-size:13px;color:#6b7799;}
+.edu-year{margin-left:auto;font-family:'Fira Code',monospace;font-size:12px;color:#00ffb3;background:rgba(0,255,179,.06);border:1px solid rgba(0,255,179,.2);padding:6px 14px;border-radius:8px;white-space:nowrap;}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;}
+.contact-icon{font-size:24px;margin-bottom:10px;}
+.contact-lbl{font-family:'Fira Code',monospace;font-size:10px;color:#00d4ff;letter-spacing:.15em;text-transform:uppercase;margin-bottom:6px;opacity:.7;}
+.contact-val{font-size:14px;color:#f0f4ff;word-break:break-all;}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.06),transparent);max-width:1000px;margin:0 auto;}
+.footer{text-align:center;padding:40px 24px;border-top:1px solid rgba(255,255,255,.06);color:#6b7799;font-family:'Fira Code',monospace;font-size:12px;}
+.footer span{color:#00d4ff;}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="badge">BSRAi · University of Lahore · 2024</div>
+  <div class="name">Ahmad<br><span>Sheraz</span></div>
+  <div class="role">AI & Robotics Student</div>
+  <div class="bio">Interested in the virtual world of Robotics and Artificial Intelligence, with a focus on Machine Learning. Studying BSc in Robotics & AI at the University of Lahore, while actively building web apps and sharpening coding skills.</div>
+  <div class="chips">
+    <span class="chip chip1">🤖 Robotics</span>
+    <span class="chip chip2">🧠 AI / ML</span>
+    <span class="chip chip3">💻 Web Dev</span>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section">
+  <div class="sec-header"><span class="sec-num">01</span><h2 class="sec-title">SKILLS</h2><div class="sec-line"></div></div>
+  <div class="grid2">
+    <div class="card"><div class="skill-label">Languages</div><div class="pills"><span class="pill">Python</span><span class="pill">C++</span><span class="pill">JavaScript</span></div></div>
+    <div class="card"><div class="skill-label">Web</div><div class="pills"><span class="pill">HTML</span><span class="pill">CSS</span></div></div>
+    <div class="card"><div class="skill-label">Interests</div><div class="pills"><span class="pill">Machine Learning</span><span class="pill">Robotics</span><span class="pill">AI</span></div></div>
+    <div class="card"><div class="skill-label">Tools</div><div class="pills"><span class="pill">Git</span><span class="pill">GitHub</span><span class="pill">VS Code</span><span class="pill">Gradio</span></div></div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section">
+  <div class="sec-header"><span class="sec-num">02</span><h2 class="sec-title">PROJECTS</h2><div class="sec-line"></div></div>
+  <div class="grid3">
+    <div class="card">
+      <div class="proj-num">PROJECT_01</div>
+      <div class="proj-title">🌙 Ramadan Countdown App</div>
+      <div class="proj-desc">A web-based Ramadan countdown application built and published via GitHub Pages. Displays a live countdown to Ramadan with a clean, interactive browser interface.</div>
+      <div class="proj-footer">
+        <span class="proj-tech">HTML · CSS · JavaScript · GitHub Pages</span>
+        <a class="proj-link" href="https://github.com/Ahmiii-18" target="_blank">View on GitHub →</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="proj-num">PROJECT_02</div>
+      <div class="proj-title">⚡ Speed Test App</div>
+      <div class="proj-desc">A browser-based internet speed testing application. Measures and displays real-time download and upload speeds directly in the web browser.</div>
+      <div class="proj-footer">
+        <span class="proj-tech">HTML · CSS · JavaScript · GitHub Pages</span>
+        <a class="proj-link" href="https://github.com/Ahmiii-18" target="_blank">View on GitHub →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section">
+  <div class="sec-header"><span class="sec-num">03</span><h2 class="sec-title">EDUCATION</h2><div class="sec-line"></div></div>
+  <div class="card">
+    <div class="edu-inner">
+      <div class="edu-icon">🎓</div>
+      <div>
+        <div class="edu-degree">BSRAi — Robotics and Artificial Intelligence</div>
+        <div class="edu-school">University of Lahore (UOL)</div>
+        <div class="edu-detail">Studying AI, Robotics, and Machine Learning</div>
+      </div>
+      <div class="edu-year">2024 – 2028</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section">
+  <div class="sec-header"><span class="sec-num">04</span><h2 class="sec-title">CONTACT</h2><div class="sec-line"></div></div>
+  <div class="contact-grid">
+    <div class="card"><div class="contact-icon">✉️</div><div class="contact-lbl">Email</div><div class="contact-val">ahmadshiraz912@icloud.com</div></div>
+    <div class="card"><div class="contact-icon">💼</div><div class="contact-lbl">LinkedIn</div><div class="contact-val">linkedin.com/in/ahmad-shiraz-8bb9a63a9</div></div>
+    <div class="card"><div class="contact-icon">🐙</div><div class="contact-lbl">GitHub</div><div class="contact-val">github.com/Ahmiii-18</div></div>
+    <div class="card"><div class="contact-icon">📍</div><div class="contact-lbl">Location</div><div class="contact-val">Lahore, Punjab, Pakistan</div></div>
+  </div>
+</div>
+
+<div class="footer">
+  <span>Ahmad Sheraz</span> · BSRAi · University of Lahore · Built with Python & Gradio
+</div>
+
+</body>
+</html>
