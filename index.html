@@ -66,17 +66,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 40px;display:fl
 .hero-text{max-width:620px;}
 .chips,.cta-row{justify-content:center;}
 
-.badge{display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;font-size:11px;color:var(--cyan);border:1px solid rgba(0,212,255,.25);background:rgba(0,212,255,.05);padding:7px 18px;border-radius:100px;margin-bottom:28px;letter-spacing:.15em;text-transform:uppercase;animation:fadeUp .8s ease both;}
+.badge{display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;font-size:11px;color:#00d4ff;border:1px solid rgba(0,212,255,.5);background:rgba(0,212,255,.12);padding:7px 18px;border-radius:100px;margin-bottom:28px;letter-spacing:.15em;text-transform:uppercase;animation:fadeUp .8s ease both;font-weight:700;box-shadow:0 0 20px rgba(0,212,255,0.2);}
 .badge-dot{width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px var(--cyan);animation:blink 1.5s ease-in-out infinite;}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
 
-h1{font-family:'Syne',sans-serif;font-size:clamp(46px,7vw,90px);font-weight:800;line-height:.95;letter-spacing:-.03em;margin-bottom:16px;animation:fadeUp .8s .1s ease both;}
-.name-line1{display:block;color:#ffffff;text-shadow:0 2px 20px rgba(0,0,0,.95),0 0 60px rgba(0,0,0,.8);}
+h1{font-family:'Syne',sans-serif;font-size:clamp(46px,7vw,90px);font-weight:800;line-height:.95;letter-spacing:-.03em;margin-bottom:16px;animation:fadeUp .8s .1s ease both;filter:drop-shadow(0 0 30px rgba(0,212,255,.4));}
+.name-line1{display:block;color:#ffffff;text-shadow:0 0 40px rgba(0,212,255,0.5),0 2px 4px rgba(0,0,0,1);}
 .name-line2{display:block;background:linear-gradient(100deg,var(--cyan),var(--violet),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 30px rgba(0,212,255,.3));}
 
-.role{font-size:clamp(14px,2.5vw,17px);color:rgba(200,220,255,0.95);margin-bottom:18px;animation:fadeUp .8s .2s ease both;text-shadow:0 2px 12px rgba(0,0,0,.9);}
+.role{font-size:clamp(16px,2.5vw,20px);color:#e0f4ff;margin-bottom:18px;animation:fadeUp .8s .2s ease both;text-shadow:0 0 20px rgba(0,212,255,0.4),0 2px 4px rgba(0,0,0,1);font-weight:500;letter-spacing:.02em;}
 .role strong{color:var(--violet);font-weight:600;}
-.bio{font-size:15px;color:rgba(220,235,255,0.9);line-height:1.85;max-width:500px;margin-bottom:32px;animation:fadeUp .8s .3s ease both;text-shadow:0 2px 12px rgba(0,0,0,.9),0 0 40px rgba(0,0,0,.8);}
+.bio{font-size:16px;color:#cce8ff;line-height:1.85;max-width:500px;margin-bottom:32px;animation:fadeUp .8s .3s ease both;text-shadow:0 1px 3px rgba(0,0,0,1),0 0 20px rgba(0,0,0,0.9);font-weight:400;}
 
 .chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:32px;animation:fadeUp .8s .4s ease both;}
 .chip{font-family:'Space Mono',monospace;font-size:11px;padding:7px 18px;border-radius:100px;border:1px solid;letter-spacing:.1em;transition:all .25s;cursor:default;}
@@ -142,7 +142,7 @@ h1{font-family:'Syne',sans-serif;font-size:clamp(46px,7vw,90px);font-weight:800;
 .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;}
 .contact-icon{font-size:24px;margin-bottom:12px;}
 .contact-lbl{font-family:'Space Mono',monospace;font-size:10px;color:var(--cyan);letter-spacing:.15em;text-transform:uppercase;margin-bottom:6px;opacity:.6;}
-.contact-val{font-size:13px;color:var(--text);word-break:break-all;}
+.contact-val{font-size:13px;color:#cce8ff;word-break:break-all;font-weight:500;}
 
 /* DIVIDER */
 .div{height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.05),transparent);max-width:1060px;margin:0 auto;}
@@ -183,7 +183,7 @@ footer span{color:var(--cyan);}
 <div class="wrap">
 
 <nav>
-  <div class="nav-logo">AS/</div>
+  <div class="nav-logo">Ahmad Sheraz</div>
   <div class="nav-links">
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
